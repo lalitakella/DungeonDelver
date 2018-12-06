@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dray : MonoBehaviour, IFacingMover
+public class Dray : MonoBehaviour, IFacingMover, IKeyMaster
 {
     public enum eMode { idle, move, attack, transition }
 
@@ -16,6 +16,7 @@ public class Dray : MonoBehaviour, IFacingMover
     public int dirHeld = -1;
     public int facing = 1;
     public eMode mode = eMode.idle;
+    public int numKeys = 0;
 
     private float timeAtkDone = 0;
     private float timeAtkNext = 0;
@@ -161,5 +162,10 @@ public class Dray : MonoBehaviour, IFacingMover
     public Vector2 GetRoomPosOnGrid(float mult = -1)
     {
         return inRm.GetRoomPosOnGrid(mult);
+    }
+    public int keyCount
+    { 
+        get { return numKeys; }
+        set { numKeys = value; }
     }
 }
