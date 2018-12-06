@@ -10,6 +10,7 @@ public class Dray : MonoBehaviour, IFacingMover
     public float speed = 5;
     public float attackDuration = 0.25f;
     public float attackDelay = 0.5f;
+    public float transitionDelay = 0.5f;
 
     [Header("Set Dynamically")]
     public int dirHeld = -1;
@@ -18,6 +19,8 @@ public class Dray : MonoBehaviour, IFacingMover
 
     private float timeAtkDone = 0;
     private float timeAtkNext = 0;
+    private float transitionDone = 0; 
+    private Vector2 transitionPos;
 
     private Rigidbody rigid;
     private Animator anim;
@@ -31,6 +34,14 @@ public class Dray : MonoBehaviour, IFacingMover
     }
     void Update()
     {
+        if (mode == eMode.transition)
+        { 
+            rigid.velocity = Vector3.zero;
+            anim.speed = 0;
+            roomPos = transitionPos; 
+            if (Time.time < transitionDone) return;
+            mode = eMode.idle;
+        }
         dirHeld = -1;
         for (int i = 0; i < 4; i++)
         {
@@ -76,6 +87,46 @@ public class Dray : MonoBehaviour, IFacingMover
                 break;
         }
         rigid.velocity = vel * speed;
+    }
+    void LateUpdate()
+    {
+        Vector2 rPos = GetRoomPosOnGrid(0.5f); 
+        int doorNum;
+        for (doorNum = 0; doorNum < 4; doorNum++)
+        {
+            if (rPos == InRoom.DOORS[doorNum])
+            {
+                break; 
+            }
+        }
+        if (doorNum > 3 || doorNum != facing) return; 
+        Vector2 rm = roomNum;
+        switch (doorNum)
+        { 
+            case 0:
+                rm.x += 1;
+                break;
+            case 1:
+                rm.y += 1;
+                break;
+            case 2:
+                rm.x -= 1;
+                break;
+            case 3:
+                rm.y -= 1;
+                break;
+        }
+        if (rm.x >= 0 && rm.x <= InRoom.MAX_RM_X)
+        { 
+            if (rm.y >= 0 && rm.y <= InRoom.MAX_RM_Y)
+            {
+                roomNum = rm;
+                transitionPos = InRoom.DOORS[(doorNum + 2) % 4]; 
+                roomPos = transitionPos;
+                mode = eMode.transition; 
+                transitionDone = Time.time + transitionDelay;
+            }
+        }
     }
     public int GetFacing()
     { 

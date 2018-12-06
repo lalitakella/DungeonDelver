@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 740197280}
   - component: {fileID: 740197282}
   - component: {fileID: 740197281}
+  - component: {fileID: 740197283}
   m_Layer: 0
   m_Name: Dray
   m_TagString: Untagged
@@ -401,6 +402,7 @@ MonoBehaviour:
   speed: 5
   attackDuration: 0.25
   attackDelay: 0.5
+  transitionDelay: 0.5
   dirHeld: -1
   facing: 1
   mode: 0
@@ -416,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keepInRoom: 0
-  gridMult: 1
+  gridMult: 0.5
 --- !u!135 &740197282
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -429,6 +431,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &740197283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740197275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3bb8a4ae05e2342b20cf6732388bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796022168
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +653,7 @@ GameObject:
   - component: {fileID: 1130027301}
   - component: {fileID: 1130027300}
   - component: {fileID: 1130027305}
+  - component: {fileID: 1130027306}
   m_Layer: 0
   m_Name: Skeletos
   m_TagString: Untagged
@@ -769,3 +783,14 @@ MonoBehaviour:
   timeThinkMax: 4
   facing: 0
   timeNextDecision: 0
+--- !u!114 &1130027306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130027299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3bb8a4ae05e2342b20cf6732388bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
