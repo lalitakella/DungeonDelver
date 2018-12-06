@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2097501401
+    locked: 0
+  - name: Enemies
+    uniqueID: 2928670397
+    locked: 0
+  - name: Dray
+    uniqueID: 1643098721
+    locked: 0
+  - name: Items
+    uniqueID: 1050755249
+    locked: 0
