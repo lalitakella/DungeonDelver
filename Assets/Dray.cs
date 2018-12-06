@@ -30,7 +30,6 @@ public class Dray : MonoBehaviour
     }
     void Update()
     {
-        //Handle Keyboard Input and manage eDrayModes
         dirHeld = -1;
         for (int i = 0; i < 4; i++)
         {
@@ -58,7 +57,6 @@ public class Dray : MonoBehaviour
                 mode = eMode.move;
             }
         }
-        //Act on the current mode
         Vector3 vel = Vector3.zero;
         switch (mode)
         {
