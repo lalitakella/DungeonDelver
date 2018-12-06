@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class TileCamera : MonoBehaviour
 {
     static private int W, H;
@@ -8,15 +9,20 @@ public class TileCamera : MonoBehaviour
     static public Sprite[] SPRITES;
     static public Transform TILE_ANCHOR;
     static public Tile[,] TILES;
+    static public string COLLISIONS;
+
     [Header("Set in Inspector")]
     public TextAsset mapData;
     public Texture2D mapTiles;
     public TextAsset mapCollisions; 
     public Tile tilePrefab;
+
     void Awake()
     {
+        COLLISIONS = Utils.RemoveLineEndings(mapCollisions.text);
         LoadMap();
     }
+
     public void LoadMap()
     {
         GameObject go = new GameObject("TILE_ANCHOR");
