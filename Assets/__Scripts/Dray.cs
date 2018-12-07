@@ -11,12 +11,21 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster
     public float attackDuration = 0.25f;
     public float attackDelay = 0.5f;
     public float transitionDelay = 0.5f;
+    public int maxHealth = 10;
 
     [Header("Set Dynamically")]
     public int dirHeld = -1;
     public int facing = 1;
     public eMode mode = eMode.idle;
     public int numKeys = 0;
+
+    [SerializeField] 
+    private int _health;
+    public int health
+    { 
+        get { return _health; }
+        set { _health = value; }
+    }
 
     private float timeAtkDone = 0;
     private float timeAtkNext = 0;
@@ -32,6 +41,9 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        inRm = GetComponent<InRoom>();
+        health = maxHealth;
     }
     void Update()
     {
