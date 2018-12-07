@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 1071266366}
   - component: {fileID: 1071266368}
   - component: {fileID: 1071266367}
+  - component: {fileID: 1071266369}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -687,6 +688,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1071266369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071266365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2481e5c9d41b71e498b614b2045e528a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  knockback: 1
 --- !u!1 &1130027299
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +840,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  knockbackSpeed: 10
+  knockbackDuration: 0.25
+  invincibleDuration: 0.5
   health: 0
+  invincible: 0
+  knockback: 0
   speed: 2
   timeThinkMin: 1
   timeThinkMax: 4
@@ -867,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2481e5c9d41b71e498b614b2045e528a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 4
   knockback: 1
 --- !u!1 &1169555868
 GameObject:
