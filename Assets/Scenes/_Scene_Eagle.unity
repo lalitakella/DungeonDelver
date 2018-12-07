@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 1071266368}
   - component: {fileID: 1071266367}
   m_Layer: 0
-  m_Name: Swords_0
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,6 +697,7 @@ GameObject:
   - component: {fileID: 1130027300}
   - component: {fileID: 1130027305}
   - component: {fileID: 1130027306}
+  - component: {fileID: 1130027307}
   m_Layer: 0
   m_Name: Skeletos
   m_TagString: Untagged
@@ -837,6 +838,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3bb8a4ae05e2342b20cf6732388bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1130027307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130027299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c9fda9c6e02224e8ebecd545a5ae6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepInRoom: 1
+  gridMult: 1
 --- !u!1 &1169555868
 GameObject:
   m_ObjectHideFlags: 0
