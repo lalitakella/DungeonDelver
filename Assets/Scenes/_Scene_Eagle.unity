@@ -113,6 +113,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &81604608
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818756373014150, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8f23c3b6da622548a510908d72d85e6, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +885,7 @@ MonoBehaviour:
   knockbackSpeed: 10
   knockbackDuration: 0.25
   invincibleDuration: 0.5
+  guaranteedItemDrop: {fileID: 1201173740}
   health: 0
   invincible: 0
   knockback: 0
@@ -950,6 +993,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1201173740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1862420598454182, guid: e8f23c3b6da622548a510908d72d85e6,
+    type: 2}
+  m_PrefabInternal: {fileID: 81604608}
 --- !u!1 &1773669785
 GameObject:
   m_ObjectHideFlags: 0

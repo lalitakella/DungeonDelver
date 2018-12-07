@@ -185,6 +185,21 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster
             knockbackDone = Time.time + knockbackDuration;
         }
     }
+    void OnTriggerEnter(Collider colld)
+    {
+        PickUp pup = colld.GetComponent<PickUp>(); 
+        if (pup == null) return;
+        switch (pup.itemType)
+        {
+            case PickUp.eType.health:
+                health = Mathf.Min(health + 2, maxHealth);
+                break;
+            case PickUp.eType.key:
+                keyCount++;
+                break;
+        }
+        Destroy(colld.gameObject);
+    }
     public int GetFacing()
     { 
         return facing;
